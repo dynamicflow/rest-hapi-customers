@@ -3,9 +3,9 @@
 var Hapi 		= require('hapi');
 var BearerAuth 	= require('hapi-auth-bearer-simple');
 
+var config		= require('../conf/config.json')[process.env.NODE_ENV || 'dev'];
 var routes		= require('./routes');
 var controller	= require('./controller');
-var config		= require('../conf/dev.js');
 
 var server = new Hapi.Server({
 	debug : {
