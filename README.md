@@ -2,11 +2,12 @@
 Is a simple project to show how to build a RESTful API using Hapi framework
 
 # Requirements
-* install and setup nodejs version 4.2
-* install npm
-* install mysql 
+* install nodejs version 4.2.^
+* install npm 2.4.^
+* install mysql 5.5.^ 
 
 # Installation
+In order to have a clean installation you must create the database and build the project.
 
 ## Database Creation
 Create a database named *test* and grant all on this database to user *test* identified by *test*  
@@ -38,7 +39,7 @@ $ npm install
 ### Using Node
 If you don't want to start the application using gulp, you can start using
 ```
-$ node ./app/app.js.
+$ node ./app/app.js
 ```
 
 ### Using Gulp
@@ -61,6 +62,6 @@ $ pm2 start ./app/app.js --name rest-hapi-customers -i -1 --env production
 
 The command below starts just one instance of the server process:
 ```
-pm2 start ./app/app.js --name rest-hapi-customers --env production
+$ pm2 start ./app/app.js --name rest-hapi-customers --env production
 ```
 
