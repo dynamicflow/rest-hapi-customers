@@ -24,7 +24,7 @@ Query OK, 0 rows affected (0,01 sec)
 After creating database, just run the script database/create_database.sql using the command:
 ```
 $ mysql -utest -ptest xpto <database/create_database.sql 
-``
+```
 
 ## Aplication Build
 After git checkout just run:
