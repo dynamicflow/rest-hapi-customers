@@ -38,7 +38,9 @@ $ npm install
 
 Executing Application
 ---------------------
-
+The application can be executed in Development Mode and Production Mode, using the 
+following commands:
+  
 ## Development Mode
 
 ### Using Node
@@ -76,6 +78,8 @@ Testing
 We still didn't create any sort of automated testing scripts, but you can try the services using 
 the following.
 
+### Customers
+
 Get All Customers
 ```
 $ curl http://localhost:3000/customers  --header "Authorization: Bearer 3f0c061549010bc70447efbef04fa0a8"
@@ -100,4 +104,15 @@ $ curl -X PUT --header "Content-Type:application/json" --header "Authorization: 
 Delete an especific customer
 ```
 $ curl -X DELETE --header "Authorization: Bearer 3f0c061549010bc70447efbef04fa0a8" http://localhost:3000/customers/2 
+```
+### Security
+
+Login in
+```
+$ curl -X POST --header "Content-Type:application/json" -d @samples/login.json http://localhost:3000/security/login
+```
+
+Loggin out
+```
+$ curl -X POST http://localhost:3000/security/logout  --header "Authorization: Bearer <TOKEN GENERATED AT LOGIN>"
 ```

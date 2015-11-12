@@ -5,7 +5,7 @@ var BearerAuth 	= require('hapi-auth-bearer-simple');
 
 var config		= require('../conf/config.json')[process.env.NODE_ENV || 'dev'];
 var routes		= require('./routes');
-var controller	= require('./controller');
+var securityCtrl	= require('./controllers/securityCtrl');
 
 var server = new Hapi.Server({
 	debug : {
@@ -21,11 +21,12 @@ server.register(BearerAuth,function(err){
     }
     
     server.auth.strategy('bearer', 'bearerAuth', true, {
-        validateFunction: controller.checkToken
+        validateFunction: securityCtrl.checkToken
     }); 
+        
+    server.route(routes.customersRoute);
+    server.route(routes.securityRoute);
     
-    server.route(routes.customer);
-
     server.start(function() {
     	console.log('Server running at:', server.info.uri);
     });
