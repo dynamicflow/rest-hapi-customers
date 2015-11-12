@@ -1,12 +1,15 @@
 # REST Hapi Customers
 Is a simple project to show how to build a RESTful API using Hapi framework
 
-# Requirements
+Requirements
+------------
 * install nodejs version 4.2.^
 * install npm 2.4.^
 * install mysql 5.5.^ 
 
-# Installation
+Installation
+------------
+
 In order to have a clean installation you must create the database and build the project.
 
 ## Database Creation
@@ -24,7 +27,7 @@ Query OK, 0 rows affected (0,01 sec)
 ```
 After creating database, just run the script database/create_database.sql using the command:
 ```
-$ mysql -utest -ptest xpto <database/create_database.sql 
+$ mysql -utest -ptest test <database/create_database.sql 
 ```
 
 ## Aplication Build
@@ -33,7 +36,9 @@ After git checkout just run:
 $ npm install
 ```
 
-# Executing Application
+Executing Application
+---------------------
+
 ## Development Mode
 
 ### Using Node
@@ -65,3 +70,34 @@ The command below starts just one instance of the server process:
 $ pm2 start ./app/app.js --name rest-hapi-customers --env production
 ```
 
+Testing
+-------
+
+We still didn't create any sort of automated testing scripts, but you can try the services using 
+the following.
+
+Get All Customers
+```
+$ curl http://localhost:3000/customers  --header "Authorization: Bearer 3f0c061549010bc70447efbef04fa0a8"
+```
+
+Get an especific customer
+```
+$ curl http://localhost:3000/customers/1  --header "Authorization: Bearer 3f0c061549010bc70447efbef04fa0a8"
+```
+
+Add a new customer
+```
+$ curl -X POST --header "Content-Type:application/json" --header "Authorization: Bearer 3f0c061549010bc70447efbef04fa0a8" -d @samples/customer1.json http://localhost:3000/customers 
+$ curl -X POST --header "Content-Type:application/json" --header "Authorization: Bearer 3f0c061549010bc70447efbef04fa0a8" -d @samples/customer2.json http://localhost:3000/customers 
+```
+
+Update an especific customer
+```
+$ curl -X PUT --header "Content-Type:application/json" --header "Authorization: Bearer 3f0c061549010bc70447efbef04fa0a8" -d @samples/customer2-update.json http://localhost:3000/customers/2
+```
+
+Delete an especific customer
+```
+$ curl -X DELETE --header "Authorization: Bearer 3f0c061549010bc70447efbef04fa0a8" http://localhost:3000/customers/2 
+```

@@ -1,0 +1,8 @@
+{
+	"name":"Santa Claus", 
+	"email":"santa.claus@example.com",
+	"address1":"71 Broadway, 100",
+	"city":"New York",
+	"state": "NY",
+	"country": "US"
+}

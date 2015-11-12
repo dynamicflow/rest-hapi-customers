@@ -1,0 +1,9 @@
+{
+	"name":"John Doe", 
+	"email":"john.doe@example.com",
+	"address1":"944 5th Avenue",
+	"address2":"Suite 200",
+	"city":"New York",
+	"state": "NY",
+	"country": "US"
+}
