@@ -1,0 +1,19 @@
+{
+  "name": "rest-hapi-customers",
+  "version": "1.0.0",
+  "description": "Rest Hapi Customers - Is a simple project to show how to build a RESTful API",
+  "main": "./app/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "alessandro@dynamicflow.com.br",
+  "license": "BSD",
+  "dependencies": {
+    "boom": "^3.0.0",
+    "gulp": "^3.9.0",
+    "hapi": "^11.1.0",
+    "hapi-auth-bearer-simple": "^3.0.1",
+    "joi": "^7.0.0",
+    "mysql": "^2.9.0"
+  }
+}
