@@ -10,6 +10,11 @@ var securityCtrl	= require('./controllers/securityCtrl');
 var server = new Hapi.Server({
 	debug : {
 		request : [ 'error' ]
+	},
+	connections: {
+	    routes: {
+	      cors: true
+	    }
 	}
 });
 

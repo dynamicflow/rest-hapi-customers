@@ -1,5 +1,5 @@
 # REST Hapi Customers
-Is a simple project to show how to build a RESTful API using Hapi framework
+Is a simple project to show how to build a RESTful API using Hapi framework.
 
 Requirements
 ------------
